@@ -1,0 +1,6 @@
+[
+    {"id":"1", "nombre": "Matematica", "foto": "img/rojo.jpg" ,"descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry", "precio": 150},
+    {"id":"2", "nombre": "Ciencia Física", "foto": "img/verde.jpg" ,"descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry", "precio": 180},
+    {"id":"3", "nombre": "Quimica", "foto": "img/azul.jpg" ,"descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry", "precio": 210},
+    {"id":"4", "nombre": "Matematica 2", "foto": "img/amarillo.jpg" ,"descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry", "precio": 190}
+]

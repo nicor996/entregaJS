@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Geométrica</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="./img/logo2.png" alt="">
+            <h2 class="nombre-pag">Formulometro</h2>
+        </div>
+        <nav>
+            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="productos.html">Productos</a>
+
+            <div class="dropdown">
+                <span id="username"></span>
+                <div class="dropdown-content">
+                    <a id="logOut" href="#">Cerrar sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class = "titulo" style="padding-top: 15px;">
+        <h2>Calculadora Geométrica</h2>
+        <p>Calcule el área o el perímetro de la figura geométrica que elija</p>
+    </div>
+    
+    <div class="bTab">
+
+        <div id="divTabla" class="botones">
+            <table style="width:60%;">
+                <tr style="align-self: center;">
+                    <th>Cuadrado</th>
+                    <th>Rectángulo</th>
+                    <th>Triángulo</th>
+                    <th>Trapecio Regular</th>
+                    <th>Círculo</th>
+                </tr>
+                <tr style="align-self: center;">
+                <th><button class="button button1" id="btnPeriCuadrado">Perímetro</button></th>
+                <th><button class="button button2" id="btnPeriRectangulo">Perímetro</button></th>
+                <th><button class="button button3" id="btnPeriTriangulo">Perímetro</button></th>
+                <th><button class="button button4" id="btnPeriTrapecio">Perímetro</button></th>
+                <th><button class="button button5" id="btnPeriCirculo">Perímetro</button></th>
+                </tr>
+                <tr style="align-self: center;">
+                    <th><button class="button button1" id="btnAreaCuadrado">Área</button></th>
+                    <th><button class="button button2" id="btnAreaRectangulo">Área</button></th>
+                    <th><button class="button button3" id="btnAreaTriangulo">Área</button></th>
+                    <th><button class="button button4" id="btnAreaTrapecio">Área</button></th>
+                    <th><button class="button button5" id="btnAreaCirculo">Área</button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+   
+
+    <div id="sepR" class="sepR">
+        <div class="res">
+            <h2 id="resultado"></h2>
+        </div> 
+    </div>
+
+    <div class = "titulo" style="padding-bottom: 15px;">
+        <h2>Crear Formulómetro</h2>
+        <p>Cree una tabla con las formulas de las figuras que elijas</p>
+    </div>
+
+    <div class="botones">
+        <table style="width:60%;">
+            <tr style="align-self: center;">
+                <th>Cuadrado</th>
+                <th>Rectángulo</th>
+                <th>Triángulo</th>
+                <th>Trapecio Regular</th>
+                <th>Círculo</th>
+            </tr>
+            <tr style="align-self: center;">
+            <th><button class="button button1" id="btnMakeCuadr">Cuadrado</button></th>
+            <th><button class="button button2" id="btnMakeRect">Rectángulo</button></th>
+            <th><button class="button button3" id="btnMakeTria">Triángulo</button></th>
+            <th><button class="button button4" id="btnMakeTrap">Trapecio Regular</button></th>
+            <th><button class="button button5" id="btnMakeCirc">Círculo</button></th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="divTabla">
+        <table id="tabla" style="width:60%;">
+            <tr>
+              <th>Figura</th>
+              <th>Formula del Perímetro</th>
+              <th>Formula del Área</th>
+            </tr>
+        </table>
+    </div>
+    <div class="bTab2">
+        <div class="boton">
+            <button class="button button5" id="bot">Crear Formulometro</button>
+            <button class="button button5" id="bot2">Crear Otra</button>
+        </div>
+    </div>
+
+
+
+
+<!--   Modales  -->
+
+        <!-- The Modal -->
+        <div id="modalPeriCuadrado" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Perimetro del cuadrado</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formPeriCuadrado">
+                        <label for="fname">Lado</label><br>
+                        <input type="number" id="ladoPeriCuadr" name="fname" placeholder="Ingrese el lado del cuadrado" required><br>
+                        <input type="submit" value="Submit" id="btnMdlPeriCuadrado">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+    
+        </div>
+    
+        <!-- The Modal -->
+        <div id="modalPeriRectangulo" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Perímetro del Rectángulo</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formPeriRectangulo">
+                        <label for="fname">Lado</label><br>
+                        <input type="number" id="largoPeriRec" name="fname" placeholder="Ingrese el lado del Rectángulo" required><br>
+                        <label for="fname">Ancho</label><br>
+                        <input type="number" id="anchoPeriRec" name="fname" placeholder="Ingrese el Ancho del Rectángulo" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+    
+        </div>
+    
+        <!-- The Modal -->
+        <div id="modalPeriTriangulo" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Perímetro del Triángulo</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formPeriTriangulo">
+                        <label for="fname">Lado 1</label><br>
+                        <input type="number" id="lado1periTri" name="fname" placeholder="Ingrese el lado 1 del Triángulo" required><br>
+                        <label for="fname">Lado 2</label><br>
+                        <input type="number" id="lado2periTri" name="fname" placeholder="Ingrese el lado 2 del Triángulo" required><br>
+                        <label for="fname">Lado 3</label><br>
+                        <input type="number" id="lado3periTri" name="fname" placeholder="Ingrese el lado 3 del Triángulo" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+    
+        </div>
+
+
+
+        <div id="modalPeriTrapecio" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Perímetro del Trapecio Regular</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formPeriTrapecio">
+                        <label for="fname">Lado 1</label><br>
+                        <input type="number" id="ladoPeriTrap1" name="fname" placeholder="Ingrese el lado 1 del Trapecio" required><br>
+                        <label for="fname">Lado 2</label><br>
+                        <input type="number" id="ladoPeriTrap2" name="fname" placeholder="Ingrese el lado 2 del Trapecio" required><br>
+                        <label for="fname">Lado 3</label><br>
+                        <input type="number" id="ladoPeriTrap3" name="fname" placeholder="Ingrese el lado 3 del Trapecio" required><br>
+                        <label for="fname">Lado 4</label><br>
+                        <input type="number" id="ladoPeriTrap4" name="fname" placeholder="Ingrese el lado 4 del Trapecio" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+    
+        </div>
+
+
+
+        <div id="modalPeriCirculo" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Perímetro del Círculo</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formPeriCirculo">
+                        <label for="fname">Radio</label><br>
+                        <input type="number" id="radioPeri" name="fname" placeholder="Ingrese el radio del Círculo" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+
+        <div id="modalAreaCuadrado" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Área de un Cuadrado</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formAreaCuadrado">
+                        <label for="fname">Lado</label><br>
+                        <input type="number" id="ladoAreaCuadr" name="fname" placeholder="Ingrese el lado del cuadrado" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+        <div id="modalAreaRectangulo" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Área de un Rectángulo</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formAreaRectangulo">
+                        <label for="fname">Lado</label><br>
+                        <input type="number" id="largoAreaRect" name="fname" placeholder="Ingrese el lado del Rectángulo" required><br>
+                        <label for="fname">Ancho</label><br>
+                        <input type="number" id="anchoAreaRect" name="fname" placeholder="Ingrese el ancho del Rectángulo" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+
+        <div id="modalAreaTriangulo" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Área de un Triángulo</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formAreaTriangulo">
+                        <label for="fname">Base</label><br>
+                        <input type="number" id="baseAreaTri" name="fname" placeholder="Ingrese la base del Triángulo" required><br>
+                        <label for="fname">Altura</label><br>
+                        <input type="number" id="alturaAreaTri" name="fname" placeholder="Ingrese la altura del Triángulo" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+    
+        </div>
+
+
+        <div id="modalAreaTrapecio" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Área de un Trapecio</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formAreaTrapecio">
+                        <label for="fname">Base mayor</label><br>
+                        <input type="number" id="baseMayorArea" name="fname" placeholder="Ingrese la base mayor del Trapecio" required><br>
+                        <label for="fname">Base menor</label><br>
+                        <input type="number" id="baseMenorArea" name="fname" placeholder="Ingrese la base menor del Trapecio" required><br>
+                        <label for="fname">Altura</label><br>
+                        <input type="number" id="alturaAreaTrap" name="fname" placeholder="Ingrese la altura del Trapecio" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+    
+        </div>
+
+        <div id="modalAreaCirculo" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Área de un Círculo</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="formAreaCirculo">
+                        <label for="fname">radio</label><br>
+                        <input type="number" id="radioArea" name="fname" placeholder="Ingrese el radio del Círculo" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+
+
+
+<footer>
+    <p>Este sitio es creado para el proyecto de coderhouse - 2022</p>
+</footer>
+
+<script src="./code.js"></script>
+<script src="./init.js"></script>
+</body>
+</html>
