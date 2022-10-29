@@ -464,3 +464,8 @@ button:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.sumaCarro{
+  padding-top: 15px;
+  text-align: center;
+}

@@ -1,4 +1,21 @@
 //Crea los elementos de los productos
+window.onload = function() {
+    let add1 = document.getElementById("add1")
+    add1.addEventListener("click", f1);
+
+    let add2 = document.getElementById("add2")
+    add2.addEventListener("click", f2);
+
+    let add3 = document.getElementById("add3")
+    add3.addEventListener("click", f3);
+
+    let add4 = document.getElementById("add4")
+    add4.addEventListener("click", f4);
+
+}
+
+
+const listaCarro = []
 
 fetch("./data/elementos.json")
 .then(response => response.json())
@@ -25,3 +42,49 @@ fetch("./data/elementos.json")
     });
     document.getElementById("prueba").innerHTML = htmlContentToAppend;
 });
+
+
+function guardarCarro(lista) {
+    localStorage.setItem('carro', JSON.stringify(lista));
+}
+
+const libroRojo = {
+    nombre: 'Libro de Matematica',
+    precio : "150",
+};
+
+const libroVerde = {
+    nombre: 'Libro de Ciencia Física',
+    precio : "180",
+};
+
+const libroAzul = {
+    nombre: 'Libro de Quimica',
+    precio : "210",
+};
+
+const libroAmarillo = {
+    nombre: 'Libro de Matematica 2',
+    precio : "190",
+};
+
+function f1() {
+    listaCarro.push(libroRojo);
+    console.log(libroRojo)
+    guardarCarro(listaCarro);
+    console.log(listaCarro);
+}
+
+function f2() {
+    listaCarro.push(libroVerde);
+    guardarCarro(listaCarro);
+}
+function f3() {
+    listaCarro.push(libroAzul);
+    guardarCarro(listaCarro);
+}
+function f4() {
+    listaCarro.push(libroAmarillo);
+    console.log(listaCarro);
+    guardarCarro(listaCarro);
+}
