@@ -1,21 +1,7 @@
-//Crea los elementos de los productos
-window.onload = function() {
-    let add1 = document.getElementById("add1")
-    add1.addEventListener("click", f1);
-
-    let add2 = document.getElementById("add2")
-    add2.addEventListener("click", f2);
-
-    let add3 = document.getElementById("add3")
-    add3.addEventListener("click", f3);
-
-    let add4 = document.getElementById("add4")
-    add4.addEventListener("click", f4);
-
-}
-
 
 const listaCarro = []
+
+//Trae los datos del JSON y los introduce en el HTML
 
 fetch("./data/elementos.json")
 .then(response => response.json())
@@ -43,10 +29,31 @@ fetch("./data/elementos.json")
     document.getElementById("prueba").innerHTML = htmlContentToAppend;
 });
 
+// una vez cargada la pagina, permite ingresar elementos al carrito
+
+window.onload = function() {
+    let add1 = document.getElementById("add1")
+    add1.addEventListener("click", f1);
+
+    let add2 = document.getElementById("add2")
+    add2.addEventListener("click", f2);
+
+    let add3 = document.getElementById("add3")
+    add3.addEventListener("click", f3);
+
+    let add4 = document.getElementById("add4")
+    add4.addEventListener("click", f4);
+
+}
+
+//Guarda el carrito en memoria local
 
 function guardarCarro(lista) {
     localStorage.setItem('carro', JSON.stringify(lista));
 }
+
+
+// Objetos para agregar al carro
 
 const libroRojo = {
     nombre: 'Libro de Matematica',
