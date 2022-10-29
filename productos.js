@@ -26,11 +26,12 @@ fetch("./data/elementos.json")
         `
     });
     document.getElementById("prueba").innerHTML = htmlContentToAppend;
+    carga()
 });
 
 //Trae el Carro guardado en memoria local
 
-window.onload = function() {
+function carga() {
     if(listaCarro == null){
         listaCarro = [];
     }
